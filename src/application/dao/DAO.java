@@ -7,7 +7,7 @@ public class DAO {
 	protected Connection con;
 	
 	public DAO() {
-		String jdbcURL = "jdbc:mysql://localhost:3306/laptrinhmang";
+		String jdbcURL = "jdbc:mysql://localhost:3306/quizapp";
 		String jdbcUsername = "root";
 		String jdbcPassword = "";
 		try {

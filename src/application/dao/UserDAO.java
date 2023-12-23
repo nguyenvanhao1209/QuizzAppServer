@@ -29,7 +29,7 @@ public class UserDAO extends DAO {
 	
 	public User getUserByID(int ID) {
 		try {
-			PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM users WHERE id = ?");
+			PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM users WHERE user_id = ?");
 			preparedStatement.setInt(1, ID);
 			ResultSet rs = preparedStatement.executeQuery();
 			if(rs.next()) {
@@ -68,7 +68,7 @@ public class UserDAO extends DAO {
 	
 	public void updateToOnline(int ID) {
 		try {
-			PreparedStatement preparedStatement = con.prepareStatement("UPDATE users SET isOnline = 1 WHERE ID = ?");
+			PreparedStatement preparedStatement = con.prepareStatement("UPDATE users SET isOnline = 1 WHERE user_id = ?");
 			preparedStatement.setInt(1, ID);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -78,7 +78,7 @@ public class UserDAO extends DAO {
 	
 	public void updateToOffline(int ID) {
 		try {
-			PreparedStatement preparedStatement = con.prepareStatement("UPDATE users SET isOnline = 0 WHERE ID = ?");
+			PreparedStatement preparedStatement = con.prepareStatement("UPDATE users SET isOnline = 0 WHERE user_id = ?");
 			preparedStatement.setInt(1, ID);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
